@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Clase01b</string>
+
+    <string name="button_load">Cargar datos</string>
+    <string name="button_list">Ver listado</string>
+
+</resources>

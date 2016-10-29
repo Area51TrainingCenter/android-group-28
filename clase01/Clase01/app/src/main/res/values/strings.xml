@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Clase01</string>
+
+    <string name="person_hint">Ingrese un nombre</string>
+    <string name="person_button">Agregar</string>
+
+</resources>
