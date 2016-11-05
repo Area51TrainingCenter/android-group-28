@@ -46,11 +46,6 @@ public class PersonActivity extends AppCompatActivity {
                 //Cambiamos de actividad
                 startActivity(intent);
 
-
-
-
-
-
             }
         });
 
