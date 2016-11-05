@@ -29,6 +29,7 @@ public class ItemAdapter extends ArrayAdapter<Item> {
         this.context = context;
     }
 
+
     @Override
     public View getView(int position, View view, ViewGroup parent) {
 
@@ -41,6 +42,8 @@ public class ItemAdapter extends ArrayAdapter<Item> {
                     .from(context)
                     .inflate(R.layout.row_item, parent, false);
 
+            //holder.name = (TextView)view.findViewById(R.id.)
+
 
         }else{
 
@@ -48,6 +51,7 @@ public class ItemAdapter extends ArrayAdapter<Item> {
 
         return view;
     }
+
 
     static class ViewHolder {
         TextView name, stock;
