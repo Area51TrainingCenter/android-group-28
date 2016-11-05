@@ -21,9 +21,8 @@ public class PersonAdapter extends ArrayAdapter<Person> {
     ArrayList<Person> list;
 
     public PersonAdapter(Context context, ArrayList<Person> list) {
-        super(context, 0, list);
 
-        Log.d("app", "constructor " + list.size() );
+        super(context, 0, list);
 
         this.context = context;
         this.list = list;
