@@ -1,10 +1,12 @@
 package area51.clase01b;
 
+import java.io.Serializable;
+
 /**
  * Created by segundo on 29/10/16.
  */
 
-public class Person {
+public class Person implements Serializable {
 
     private String id;
     private String name;

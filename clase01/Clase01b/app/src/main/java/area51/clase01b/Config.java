@@ -9,5 +9,6 @@ import java.util.ArrayList;
 public class Config {
 
     public static ArrayList<Person> people = null;
+    public static String bundle_person = "person";
 
 }
