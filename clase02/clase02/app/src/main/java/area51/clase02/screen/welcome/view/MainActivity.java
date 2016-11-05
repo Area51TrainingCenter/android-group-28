@@ -40,9 +40,7 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ItemAdapter(context, array);
         list.setAdapter(adapter);
 
-
         //adapter.notifyDataSetChanged();
-
 
     }
 }
