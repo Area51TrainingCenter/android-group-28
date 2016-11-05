@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         //Enlazamos las variables con los componentes del diseño
@@ -32,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        //loadPerson()
+    }
+
+
     public void loadPerson(View view) {
 
         Config.people = new ArrayList<Person>();
@@ -39,11 +48,13 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < 100; i++) {
 
             Person person = new Person();
+
             person.setName("Persona " + i);
             person.setId("" + i);
             person.setAge("" + i * 10);
 
             Config.people.add(person);
+
             Log.d("App", "person: " + person.getName());
 
         }
