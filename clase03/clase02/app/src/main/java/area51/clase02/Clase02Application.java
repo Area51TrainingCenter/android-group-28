@@ -1,8 +1,11 @@
 package area51.clase02;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+
+import area51.clase02.libraries.fresco.ImagePipelineConfigUtils;
 
 /**
  * Created by segundo on 5/11/16.
@@ -14,7 +17,10 @@ public class Clase02Application extends Application {
     public void onCreate() {
         super.onCreate();
 
-        Fresco.initialize(this);
+        Fresco.initialize(this,
+                ImagePipelineConfigUtils.getDefaultImagePipelineConfig(this)
+        );
+
 
     }
 }
