@@ -8,4 +8,5 @@
 
     <!-- Screen Welcome -->
     <color name="item_background">#F6F6F6</color>
+    <color name="placeholder">#FF4081</color>
 </resources>
