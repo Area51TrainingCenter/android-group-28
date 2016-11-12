@@ -3,6 +3,8 @@ package area51.clase02.screen.welcome.view;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -26,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Item> array = new ArrayList<Item>();
 
-
         Item item = new Item();
         item.setId("");
         item.setName("Smart");
@@ -44,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
         list.setAdapter(adapter);
 
         //adapter.notifyDataSetChanged();
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                
+            }
+        });
+
 
     }
 }
