@@ -26,7 +26,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".screen.product.view.ProductActivity" />
-        <activity android:name=".screen.product.view.PhotoActivity"></activity>
+        <activity android:name=".screen.product.view.PhotoActivity" />
+        <activity android:name=".screen.product.view.PhotoGridActivity"></activity>
     </application>
 
 </manifest>
