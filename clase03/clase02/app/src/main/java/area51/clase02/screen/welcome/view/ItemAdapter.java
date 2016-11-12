@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
@@ -49,6 +50,7 @@ public class ItemAdapter extends ArrayAdapter<Item> {
             holder.name = (TextView) view.findViewById(R.id.name);
             holder.stock = (TextView) view.findViewById(R.id.stock);
             holder.image = (SimpleDraweeView) view.findViewById(R.id.image);
+            holder.layout = (LinearLayout) view.findViewById(R.id.layout);
 
             view.setTag(holder);
 
@@ -71,6 +73,8 @@ public class ItemAdapter extends ArrayAdapter<Item> {
 
         image.showImage();
 
+        holder.layout.setTag(item);
+
 
         return view;
     }
@@ -79,6 +83,7 @@ public class ItemAdapter extends ArrayAdapter<Item> {
     static class ViewHolder {
         TextView name, stock;
         SimpleDraweeView image;
+        LinearLayout layout;
     }
 
 }

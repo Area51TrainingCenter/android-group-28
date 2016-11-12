@@ -1,15 +1,18 @@
 package area51.clase02.screen.welcome.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 import area51.clase02.R;
+import area51.clase02.screen.product.view.ProductActivity;
 import area51.clase02.screen.welcome.model.Item;
 
 public class MainActivity extends AppCompatActivity {
@@ -49,7 +52,27 @@ public class MainActivity extends AppCompatActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                
+
+                LinearLayout layout =
+                        (LinearLayout) view.findViewById(R.id.layout);
+                Item item = (Item) layout.getTag();
+
+                Intent intent = new Intent(MainActivity.this,
+                        ProductActivity.class);
+
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("Item", item);
+
+                intent.putExtras(bundle);
+
+                startActivity(intent);
+
+                overridePendingTransition(
+                        R.anim.slide_in_right,
+                        R.anim.slide_out_left
+                );
+
+
             }
         });
 
