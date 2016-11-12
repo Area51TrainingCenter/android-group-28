@@ -11,6 +11,8 @@ public class Clase02Globals {
     //Nombre de la aplicación
     public static String FRESCO_CACHE = "Clase02";
 
+    //Bundle
+    public static String bundle_item = "item";
 
 
 }

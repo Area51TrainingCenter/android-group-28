@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import area51.clase02.Clase02Globals;
 import area51.clase02.R;
 import area51.clase02.screen.product.view.ProductActivity;
 import area51.clase02.screen.welcome.model.Item;
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                         ProductActivity.class);
 
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("Item", item);
+                bundle.putSerializable(Clase02Globals.bundle_item, item);
 
                 intent.putExtras(bundle);
 

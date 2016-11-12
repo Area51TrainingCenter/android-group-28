@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="@string/home_title"
+            android:textColor="@color/textColorPrimary"
             android:textSize="20sp" />
 
         <ImageView
