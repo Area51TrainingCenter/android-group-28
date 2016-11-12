@@ -16,6 +16,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import java.util.ArrayList;
 
 import area51.clase02.R;
+import area51.clase02.libraries.fresco.TrackingImage;
 import area51.clase02.screen.welcome.model.Item;
 
 
@@ -61,15 +62,15 @@ public class ItemAdapter extends ArrayAdapter<Item> {
         holder.stock.setText(item.getStock());
 
         //Agregamos una imagen usando Fresco-lib
-        Uri uri = Uri.parse("res:///" + R.mipmap.ic_launcher);
+        TrackingImage image = new TrackingImage(context);
+        //Especificamos que imagen vamos a mostrar
+        //image.url = "res:///" + R.mipmap.ic_launcher;
+        image.url = item.getImage();
+        //En que View lo vamos a mostrar
+        image.view = holder.image;
 
-        DraweeController controller = Fresco.newDraweeControllerBuilder()
-                .setUri(uri)
-                .setTapToRetryEnabled(true)
-                .setOldController(holder.image.getController())
-                .build();
+        image.showImage();
 
-        holder.image.setController(controller);
 
         return view;
     }

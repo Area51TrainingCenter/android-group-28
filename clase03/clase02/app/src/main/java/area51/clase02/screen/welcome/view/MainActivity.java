@@ -26,16 +26,19 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Item> array = new ArrayList<Item>();
 
-        for (int i = 0; i < 20; i++) {
 
-            Item item = new Item();
-            item.setId("" + i);
-            item.setName("name " + i);
-            item.setStock("" + i * 20);
+        Item item = new Item();
+        item.setId("");
+        item.setName("Smart");
+        item.setImage("https://www.megatone.net/Images/Articulos/zoom/TEL4865SSGg.jpg");
+        item.setDescription("Trascendiendo la tecnología LED, cada píxel de este televisor de Samsung permitirá que te sumerjas en una iluminación de colores inigualables. Tu experiencia nunca será igual. Permite que tus ojos se relajen y vive una experiencia visual en forma natural y confortable");
+        item.setStock("20");
 
+        for (int i = 0; i < 100; i++) {
+            //Agregamos items al arreglo
             array.add(item);
-
         }
+
 
         adapter = new ItemAdapter(context, array);
         list.setAdapter(adapter);

@@ -12,6 +12,7 @@ public class Item implements Serializable {
     private String image;
     private String name;
     private String stock;
+    private String description;
 
     public String getId() {
         return id;
@@ -43,5 +44,13 @@ public class Item implements Serializable {
 
     public void setStock(String stock) {
         this.stock = stock;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
