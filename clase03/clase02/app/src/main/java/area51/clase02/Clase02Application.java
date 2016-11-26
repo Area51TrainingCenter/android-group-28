@@ -1,7 +1,6 @@
 package area51.clase02;
 
 import android.app.Application;
-import android.content.Context;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 

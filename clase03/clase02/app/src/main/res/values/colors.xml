@@ -9,4 +9,15 @@
     <!-- Screen Welcome -->
     <color name="item_background">#F6F6F6</color>
     <color name="placeholder">#FF4081</color>
+
+    <!-- Screen Product -->
+    <color name="product_name">#1B191A</color>
+    <color name="product_stock">#1B191A</color>
+    <color name="product_price">#1B191A</color>
+    <color name="product_description">#797979</color>
+
+    <!-- Screen Image -->
+    <color name="image_text_info">#2D81A5</color>
+
+
 </resources>

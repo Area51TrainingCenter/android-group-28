@@ -24,7 +24,12 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    testCompile 'junit:junit:4.12'
+    //Para trabajar con imágenes
     compile 'com.facebook.fresco:fresco:0.14.1'
+    //Para Slider de imagenes
+    compile 'me.relex:circleindicator:1.2.2@aar'
+    //Librerias de compatibilidad en Android
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:support-v4:24.2.1'
+    testCompile 'junit:junit:4.12'
 }

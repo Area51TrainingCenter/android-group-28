@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Clase02</string>
     <string name="home_title">AOW</string>
+
+    <!-- Screen Image Slider -->
+    <string name="image_info">INFO</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

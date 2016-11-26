@@ -13,6 +13,7 @@ public class Clase02Globals {
 
     //Bundle
     public static String bundle_item = "item";
+    public static String bundle_image = "image";
 
 
 }
