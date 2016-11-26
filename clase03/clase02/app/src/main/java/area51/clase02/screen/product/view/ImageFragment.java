@@ -3,6 +3,7 @@ package area51.clase02.screen.product.view;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
@@ -66,7 +67,8 @@ public class ImageFragment extends Fragment {
         onActivityCreated
         Este método se ejecuta cuando el fragmento ha sido
         agregado al Activity
-     */
+
+    */
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -76,6 +78,28 @@ public class ImageFragment extends Fragment {
         imageLoader.view = image;
         imageLoader.url = urlImage;
         imageLoader.showImage();
+
+        image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(activity, PhotoActivity.class);
+                Bundle bundle = new Bundle();
+
+                bundle.getString(Clase02Globals.bundle_image, urlImage);
+
+                intent.putExtras(bundle);
+
+                activity.startActivity(intent);
+
+                activity.overridePendingTransition(
+                        R.anim.slide_in_right,
+                        R.anim.slide_out_left
+                );
+
+            }
+        });
+
 
     }
 }

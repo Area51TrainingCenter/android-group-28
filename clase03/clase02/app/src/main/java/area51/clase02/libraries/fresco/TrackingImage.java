@@ -4,10 +4,14 @@ import android.content.Context;
 import android.net.Uri;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.drawable.ScalingUtils;
+import com.facebook.drawee.generic.GenericDraweeHierarchy;
+import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import area51.clase02.R;
+import area51.clase02.libraries.fresco.zoomable.ZoomableDraweeView;
 import area51.clase02.libraries.log.TrackingLog;
 
 /**
@@ -18,10 +22,31 @@ public class TrackingImage {
 
     Context context;
     public SimpleDraweeView view;
+    public ZoomableDraweeView zoomView;
     public String url;
 
     public TrackingImage(Context context) {
         this.context = context;
+    }
+
+    public void showZoomImage() {
+
+        TrackingLog.getLog("url:" + url);
+
+        DraweeController ctrl = Fresco
+                .newDraweeControllerBuilder()
+                .setUri(Uri.parse(url))
+                .setTapToRetryEnabled(true).build();
+
+        GenericDraweeHierarchy hierarchy =
+                new GenericDraweeHierarchyBuilder(context.getResources())
+                        .setActualImageScaleType(ScalingUtils.ScaleType.FIT_CENTER)
+                        .setProgressBarImage(new CircleProgressBarDrawable())
+                        .build();
+
+        zoomView.setController(ctrl);
+        zoomView.setHierarchy(hierarchy);
+
     }
 
     public void showImage() {
