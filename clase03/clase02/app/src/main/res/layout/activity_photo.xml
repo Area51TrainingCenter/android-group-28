@@ -12,6 +12,6 @@
         fresco:placeholderImage="@drawable/img_placeholder"
         fresco:placeholderImageScaleType="focusCrop" />
 
-    <include layout="@layout/toolbar_home" />
+    <include layout="@layout/toolbar_photo" />
 
 </FrameLayout>

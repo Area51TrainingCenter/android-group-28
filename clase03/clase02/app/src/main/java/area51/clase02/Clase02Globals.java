@@ -16,4 +16,5 @@ public class Clase02Globals {
     public static String bundle_image = "image";
 
 
+
 }
