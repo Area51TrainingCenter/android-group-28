@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Item item = new Item();
         item.setId("");
         item.setName("Smart");
-        item.setImage("https://www.megatone.net/Images/Articulos/zoom/TEL4865SSGg.jpg");
+        item.setImage("http://www.eavela.com/sites/default/files/uploads/images/puerto-de-pasajes.jpg");
         item.setDescription("Trascendiendo la tecnología LED, cada píxel de este televisor de Samsung permitirá que te sumerjas en una iluminación de colores inigualables. Tu experiencia nunca será igual. Permite que tus ojos se relajen y vive una experiencia visual en forma natural y confortable");
         item.setStock("20");
 

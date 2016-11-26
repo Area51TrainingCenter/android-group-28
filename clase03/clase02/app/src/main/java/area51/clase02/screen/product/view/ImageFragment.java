@@ -17,6 +17,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import area51.clase02.Clase02Globals;
 import area51.clase02.R;
 import area51.clase02.libraries.fresco.TrackingImage;
+import area51.clase02.libraries.log.TrackingLog;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -86,9 +87,11 @@ public class ImageFragment extends Fragment {
                 Intent intent = new Intent(activity, PhotoActivity.class);
                 Bundle bundle = new Bundle();
 
-                bundle.getString(Clase02Globals.bundle_image, urlImage);
+                bundle.putString(Clase02Globals.bundle_image, urlImage);
 
                 intent.putExtras(bundle);
+
+                TrackingLog.getLog("urlImage: " + urlImage);
 
                 activity.startActivity(intent);
 
