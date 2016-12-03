@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".screen.form.view.NewPokemonActivity"></activity>
+        <activity android:name=".screen.form.view.NewPokemonActivity" />
+        <activity android:name=".screen.grid.view.GalleryActivity"></activity>
     </application>
 
 </manifest>

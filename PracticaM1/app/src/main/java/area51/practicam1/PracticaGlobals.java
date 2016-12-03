@@ -11,5 +11,6 @@ import area51.practicam1.model.Pokemon;
 public class PracticaGlobals {
 
     public static ArrayList<Pokemon> pokemons = null;
+    public static int image = 0;
 
 }
