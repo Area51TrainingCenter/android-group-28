@@ -7,7 +7,7 @@ import android.graphics.RectF;
 
 import com.facebook.drawee.drawable.ProgressBarDrawable;
 
-import area51.clase02.R;
+import area51.clase05.R;
 
 
 public class CircleProgressBarDrawable extends ProgressBarDrawable {

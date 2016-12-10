@@ -10,9 +10,10 @@ import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
 
-import area51.clase02.R;
-import area51.clase02.libraries.fresco.zoomable.ZoomableDraweeView;
-import area51.clase02.libraries.log.TrackingLog;
+import area51.clase05.libraries.fresco.CircleProgressBarDrawable;
+import area51.clase05.libraries.fresco.zoomable.ZoomableDraweeView;
+import area51.clase05.libraries.log.TrackingLog;
+
 
 /**
  * Created by segundo on 12/11/16.
