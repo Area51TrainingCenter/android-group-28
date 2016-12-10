@@ -1,4 +1,4 @@
-package area51.clase02.libraries.fresco;
+package area51.clase05.libraries.fresco;
 
 import android.content.Context;
 import android.net.Uri;

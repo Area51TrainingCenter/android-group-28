@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class People implements Serializable {
 
     private String gender;
-    //String name;
+    private String name;
     private String title;
     private String first;
     private String last;
@@ -112,5 +112,13 @@ public class People implements Serializable {
 
     public void setPicture_large(String picture_large) {
         this.picture_large = picture_large;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
