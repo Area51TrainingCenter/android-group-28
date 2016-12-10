@@ -26,11 +26,12 @@ public class HomeStateAdapter extends FragmentStatePagerAdapter {
                 fragment = new CallsFragment();
                 break;
             }
-            case 2: {
+            case 1: {
                 fragment = new ChatFragment();
                 break;
             }
         }
+
 
         return fragment;
     }

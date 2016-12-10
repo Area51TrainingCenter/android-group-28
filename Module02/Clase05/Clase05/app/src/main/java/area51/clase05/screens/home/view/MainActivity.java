@@ -25,7 +25,7 @@ public class MainActivity extends Clase05Activity {
     void initBinding() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        view = new HomeViewModel(this, this, binding);
+        view = new HomeViewModel(this, this, binding, getSupportFragmentManager());
         binding.setHomeView(view);
         view.initView();
 
