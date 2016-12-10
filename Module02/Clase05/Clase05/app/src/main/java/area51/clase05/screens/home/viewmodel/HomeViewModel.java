@@ -3,6 +3,8 @@ package area51.clase05.screens.home.viewmodel;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.view.ViewPager;
+import android.view.View;
 
 import area51.clase05.R;
 import area51.clase05.databinding.ActivityMainBinding;
@@ -38,6 +40,56 @@ public class HomeViewModel {
 
         HomeStateAdapter adapter = new HomeStateAdapter(manager);
         binding.pager.setAdapter(adapter);
+
+        //Establecemos la primera pestaña con colores distintos
+        binding.pager.setCurrentItem(0);
+
+        binding.tabCalls.setTextColor(
+                context.getResources().getColor(R.color.home_tab_hover)
+        );
+        binding.tabViewCalls.setBackgroundColor(
+                context.getResources().getColor(R.color.home_tab_hover)
+        );
+
+        //Agregamos el listener de los cambios del ViewPager
+        binding.pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+                initTabs();
+
+                switch (position) {
+                    case 0:
+                        binding.tabCalls.setTextColor(
+                                context.getResources().getColor(R.color.home_tab_hover)
+                        );
+                        binding.tabViewCalls.setBackgroundColor(
+                                context.getResources().getColor(R.color.home_tab_hover)
+                        );
+                        break;
+                    case 1:
+                        binding.tabChats.setTextColor(
+                                context.getResources().getColor(R.color.home_tab_hover)
+                        );
+                        binding.tabViewChats.setBackgroundColor(
+                                context.getResources().getColor(R.color.home_tab_hover)
+                        );
+                        break;
+                }
+
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
 
     }
