@@ -4,12 +4,4 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <GridView
-        android:id="@+id/grid"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:columnWidth="110dp"
-        android:numColumns="auto_fit"
-        android:verticalSpacing="5dp" />
-
 </LinearLayout>

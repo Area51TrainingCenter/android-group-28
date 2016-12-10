@@ -34,7 +34,8 @@
                     android:gravity="center"
                     android:text="@string/home_tab_calls"
                     android:textColor="@color/home_tab_normal"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <View
                     android:id="@+id/tab_view_calls"
@@ -57,7 +58,8 @@
                     android:gravity="center"
                     android:text="@string/home_tab_chat"
                     android:textColor="@color/home_tab_normal"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
                 <View
                     android:id="@+id/tab_view_chats"

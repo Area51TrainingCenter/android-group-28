@@ -1,4 +1,4 @@
-package area51.clase05.screens.chat.view;
+package area51.clase05.screens.calls.view;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -20,11 +20,11 @@ import area51.clase05.model.People;
  * Created by segundo on 10/12/16.
  */
 
-public class ChatAdapter extends ArrayAdapter<People> {
+public class CallsAdapter extends ArrayAdapter<People> {
 
     Context context;
 
-    public ChatAdapter(Context context, ArrayList<People> array) {
+    public CallsAdapter(Context context, ArrayList<People> array) {
         super(context, 0, array);
 
         this.context = context;
@@ -41,7 +41,7 @@ public class ChatAdapter extends ArrayAdapter<People> {
             vh = new ViewHolder();
 
             view = LayoutInflater.from(context)
-                    .inflate(R.layout.row_chat, parent, false);
+                    .inflate(R.layout.row_calls, parent, false);
 
             vh.picture = (SimpleDraweeView) view.findViewById(R.id.picture);
             vh.name = (TextView) view.findViewById(R.id.name);
