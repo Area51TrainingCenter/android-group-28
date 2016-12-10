@@ -28,6 +28,10 @@ public class HomeViewModel {
 
     public void initView() {
 
+    }
+
+    void initTabs(){
+
 
 
     }

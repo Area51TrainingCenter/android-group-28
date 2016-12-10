@@ -9,6 +9,11 @@
     <color name="windowBackground">#FFFFFF</color>
     <color name="textColorPrimary">#000000</color>
 
+    <!-- Launcher Screen -->
     <color name="launcher_background">#1ABC9C</color>
+
+    <!-- Home Screen -->
+    <color name="home_tab_normal">#76D7C4</color>
+    <color name="home_tab_hover">#FFFFFF</color>
 
 </resources>
