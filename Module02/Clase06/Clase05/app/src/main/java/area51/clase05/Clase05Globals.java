@@ -9,6 +9,10 @@ public class Clase05Globals {
     public static String APP_LOG = "Clase05";
     public static String FRESCO_CACHE = "Clase05";
 
+
+    public static final String TAG_JSON_ARRAY = "json_array_req";
+    public static final String TAG_JSON_OBJ = "json_obj_req";
+
     //================================================
     //API
     //================================================
@@ -18,10 +22,19 @@ public class Clase05Globals {
     //================================================
     //PARAMETERS
     //================================================
-    public static String page = "&page=";
-    public static String results = "&results=";
+    public static String par_page = "&page=";
+    public static String par_results = "&results=";
 
+    //================================================
+    //METHODS
+    //================================================
+    public static String rest_calls = API + API_VERSION;
+    public static String rest_chats = API + API_VERSION;
 
+    //================================================
+    //REQUEST
+    //================================================
+    public static String req_results = "results";
 
 
 }

@@ -26,6 +26,8 @@ public class Clase05Application extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        
+        mInstance = this;
 
         Fresco.initialize(this,
                 ImagePipelineConfigUtils.getDefaultImagePipelineConfig(this));
