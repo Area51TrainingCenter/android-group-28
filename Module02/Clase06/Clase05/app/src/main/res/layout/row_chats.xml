@@ -15,6 +15,7 @@
         android:paddingTop="5dp">
 
         <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/photo"
             android:layout_width="45dp"
             android:layout_height="45dp"
             fresco:actualImageScaleType="focusCrop"
@@ -30,6 +31,7 @@
             android:paddingTop="5dp">
 
             <TextView
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
@@ -39,6 +41,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/app_name"
@@ -49,6 +52,7 @@
 
 
         <TextView
+            android:id="@+id/time"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.7"

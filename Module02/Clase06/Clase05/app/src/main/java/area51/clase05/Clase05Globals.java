@@ -21,4 +21,7 @@ public class Clase05Globals {
     public static String page = "&page=";
     public static String results = "&results=";
 
+
+
+
 }
