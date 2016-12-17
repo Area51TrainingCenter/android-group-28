@@ -13,19 +13,19 @@ import area51.clase05.R;
 /**
  * Created by segundo on 21/04/16.
  */
-public class Clase05CircleView extends View {
+public class CircleView extends View {
 
     private static final int DEFAULT_CIRCLE_COLOR = R.color.colorPrimary;
 
     private int circleColor = DEFAULT_CIRCLE_COLOR;
     private Paint paint;
 
-    public Clase05CircleView(Context context) {
+    public CircleView(Context context) {
         super(context);
         init(context, null);
     }
 
-    public Clase05CircleView(Context context, AttributeSet attrs) {
+    public CircleView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
