@@ -107,7 +107,33 @@ public class CallsFragment extends Fragment {
 
                             if (response.has(Clase05Globals.req_results)) {
 
-                                JSONArray array = response.getJSONArray(Clase05Globals.req_results);
+                                JSONArray data = response.getJSONArray(Clase05Globals.req_results);
+
+                                int total = data.length();
+                                JSONObject item = null;
+
+                                for (int i = 0; i < total; i++) {
+
+                                    item = data.getJSONObject(i);
+                                    People people = new People();
+
+                                    JSONObject name = item.getJSONObject(Clase05Globals.req_name);
+
+                                    String name_large = name.getString(Clase05Globals.req_first)
+                                            + " " + name.getString(Clase05Globals.req_last);
+
+                                    JSONObject picture = item.getJSONObject(Clase05Globals.req_picture);
+                                    String picture_large = picture.getString(Clase05Globals.req_large);
+
+                                    people.setName(name_large);
+                                    people.setPicture_large(picture_large);
+                                    people.setRegistered(item.getString(Clase05Globals.req_registered));
+                                    array.add(people);
+                                }
+
+                                adapter.notifyDataSetChanged();
+                                loaders.setVisibility(View.GONE);
+
 
                             } else {
                                 //No hay datos

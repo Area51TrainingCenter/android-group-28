@@ -35,6 +35,12 @@ public class Clase05Globals {
     //REQUEST
     //================================================
     public static String req_results = "results";
+    public static String req_name = "name";
+    public static String req_last = "last";
+    public static String req_first = "first";
+    public static String req_picture = "picture";
+    public static String req_large = "large";
+    public static String req_registered = "registered";
 
 
 }
