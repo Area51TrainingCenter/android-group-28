@@ -8,6 +8,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 
@@ -45,6 +46,7 @@ public class CallsFragment extends Fragment {
     CallsAdapter adapter;
 
     int PAGE = 1;
+    boolean flag_loading = true;
 
     public CallsFragment() {
 
@@ -77,6 +79,28 @@ public class CallsFragment extends Fragment {
             public void onRefresh() {
                 PAGE = 1;
                 getCalls();
+            }
+        });
+
+
+        grid.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem,
+                                 int visibleItemCount, int totalItemCount) {
+
+                final int lastItem = firstVisibleItem + visibleItemCount;
+                if (totalItemCount > 0)
+                    if (lastItem == totalItemCount) {
+                        if (flag_loading == false) {
+                            flag_loading = true;
+                            getCalls();
+                        }
+                    }
             }
         });
 
@@ -159,6 +183,7 @@ public class CallsFragment extends Fragment {
                                     refresh.setRefreshing(false);
                                 }
 
+                                flag_loading = false;
                                 PAGE++;
 
 

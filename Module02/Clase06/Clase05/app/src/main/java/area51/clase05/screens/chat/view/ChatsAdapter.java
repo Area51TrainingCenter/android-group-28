@@ -55,8 +55,8 @@ public class ChatsAdapter extends ArrayAdapter<People> {
 
         People people = getItem(position);
 
-        vh.name.setText(people.getName() + " " + people.getLast());
-        vh.description.setText(people.getState());
+        vh.name.setText(people.getName());
+        vh.description.setText(people.getEmail());
         vh.time.setText(people.getRegistered());
 
         TrackingImage imageLoader = new TrackingImage(context);
