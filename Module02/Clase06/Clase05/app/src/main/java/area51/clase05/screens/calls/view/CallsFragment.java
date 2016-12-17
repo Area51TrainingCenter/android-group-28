@@ -44,6 +44,8 @@ public class CallsFragment extends Fragment {
     ArrayList<People> array;
     CallsAdapter adapter;
 
+    int PAGE = 1;
+
     public CallsFragment() {
 
     }
@@ -70,6 +72,14 @@ public class CallsFragment extends Fragment {
         adapter = new CallsAdapter(getActivity(), array);
         grid.setAdapter(adapter);
 
+        refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                PAGE = 1;
+                getCalls();
+            }
+        });
+
         /*
         ArrayList<People> array = new ArrayList<People>();
         for (int i = 0; i < 100; i++) {
@@ -89,9 +99,17 @@ public class CallsFragment extends Fragment {
 
     public void getCalls() {
 
-        loaders.setVisibility(View.VISIBLE);
+        if (PAGE == 1) {
+            loaders.setVisibility(View.VISIBLE);
+            array.clear();
+            adapter.notifyDataSetChanged();
+        }
 
-        String url = Clase05Globals.rest_calls;
+        String url = Clase05Globals.rest_calls +
+                Clase05Globals.par_results + Clase05Globals.API_ROWS +
+                Clase05Globals.par_page + PAGE;
+
+        TrackingLog.getLog("url: " + url);
 
         JsonObjectRequest jo = new JsonObjectRequest(
                 Request.Method.GET,
@@ -132,7 +150,16 @@ public class CallsFragment extends Fragment {
                                 }
 
                                 adapter.notifyDataSetChanged();
-                                loaders.setVisibility(View.GONE);
+
+                                if (PAGE == 1) {
+                                    loaders.setVisibility(View.GONE);
+                                }
+
+                                if (refresh.isRefreshing()) {
+                                    refresh.setRefreshing(false);
+                                }
+
+                                PAGE++;
 
 
                             } else {
@@ -156,7 +183,6 @@ public class CallsFragment extends Fragment {
 
 
         Clase05Application.getInstance().addToRequestQueue(jo, Clase05Globals.TAG_JSON_OBJ);
-
 
     }
 

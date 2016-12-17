@@ -18,6 +18,7 @@ public class Clase05Globals {
     //================================================
     public static String API = "https://randomuser.me/api/";
     public static String API_VERSION = "?";
+    public static String API_ROWS = "30";
 
     //================================================
     //PARAMETERS
