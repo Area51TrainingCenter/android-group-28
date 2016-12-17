@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1ABC9C</color>
+    <color name="colorPrimaryDark">#17A98C</color>
+    <color name="colorAccent">#1ABC9C</color>
+
+    <color name="placeholder">#CDCDCD</color>
+
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="textColorPrimary">#000000</color>
+
+    <!-- Launcher Screen -->
+    <color name="launcher_background">#1ABC9C</color>
+
+    <!-- Home Screen -->
+    <color name="home_tab_normal">#76D7C4</color>
+    <color name="home_tab_hover">#FFFFFF</color>
+
+    <!-- Chat Screen -->
+    <color name="chat_time_registered">#C3C3C3</color>
+
+</resources>
