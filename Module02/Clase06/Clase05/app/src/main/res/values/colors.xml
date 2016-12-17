@@ -16,7 +16,10 @@
     <color name="home_tab_normal">#76D7C4</color>
     <color name="home_tab_hover">#FFFFFF</color>
 
-    <!-- Chat Screen -->
+    <!-- Calls Screen -->
     <color name="chat_time_registered">#C3C3C3</color>
+
+    <!-- Chats Screen -->
+    <color name="chat_description">#626262</color>
 
 </resources>
