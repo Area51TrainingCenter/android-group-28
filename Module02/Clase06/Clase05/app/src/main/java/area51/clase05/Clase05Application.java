@@ -7,7 +7,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.facebook.drawee.backends.pipeline.Fresco;
-import com.facebook.imagepipeline.core.ImagePipelineConfig;
+
 
 import area51.clase05.libraries.fresco.ImagePipelineConfigUtils;
 
