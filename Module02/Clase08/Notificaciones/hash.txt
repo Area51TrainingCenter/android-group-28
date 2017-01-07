@@ -1,0 +1,18 @@
+
+
+
+Nombre de Alias: Notifications
+Fecha de Creación: 07/01/2017
+Tipo de Entrada: PrivateKeyEntry
+Longitud de la Cadena de Certificado: 1
+Certificado[1]:
+Propietario: CN=Notificaciones, OU=Area51, O=Area51, L=Lima, ST=Lima, C=PE
+Emisor: CN=Notificaciones, OU=Area51, O=Area51, L=Lima, ST=Lima, C=PE
+Número de serie: 60034bed
+Válido desde: Sat Jan 07 12:39:33 PET 2017 hasta: Wed Jan 01 12:39:33 PET 2042
+Huellas digitales del Certificado:
+	 MD5: A6:C7:59:8E:C7:64:EE:19:E6:75:F6:D2:75:12:46:51
+	 SHA1: 1E:AD:66:A8:05:26:92:93:1A:F8:50:E6:77:35:3D:CB:73:F6:BC:A8
+	 SHA256: 00:65:26:02:D7:4F:BC:49:C5:E4:FF:A9:79:45:82:00:82:AF:3F:60:64:14:39:DE:29:4C:8D:65:B3:04:8A:D6
+	 Nombre del Algoritmo de Firma: SHA256withRSA
+	 Versión: 3
