@@ -1,5 +1,7 @@
 package area51.notificaciones.sad.libraries.fcm;
 
+import android.app.PendingIntent;
+
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -38,6 +40,12 @@ public class NotificacionesMessagingService
                              Map<String, String> data) {
 
         TrackingCode.getMessage("data: " + data);
+
+        
+
+
+
+        //PendingIntent pendingIntent
 
 
     }
