@@ -26,10 +26,25 @@
             android:textSize="14sp" />
 
         <Button
-            android:text="@string/app_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp" />
+            android:layout_margin="20dp"
+            android:text="@string/welcome_register" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/loaders"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="48dp"
+            android:layout_height="48dp" />
 
     </LinearLayout>
 
