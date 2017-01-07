@@ -22,4 +22,8 @@
     <!-- Chats Screen -->
     <color name="chat_description">#626262</color>
 
+    <!-- Profile Screeen -->
+    <color name="profile_text">#2B2B2B</color>
+
+
 </resources>
