@@ -1,6 +1,7 @@
 package area51.clase05.screens.calls.view;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 
@@ -30,6 +32,7 @@ import area51.clase05.Clase05Globals;
 import area51.clase05.R;
 import area51.clase05.libraries.log.TrackingLog;
 import area51.clase05.model.People;
+import area51.clase05.screens.profile.view.ProfileActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -117,6 +120,17 @@ public class CallsFragment extends Fragment {
         adapter = new CallsAdapter(getActivity(), array);
         grid.setAdapter(adapter);
         */
+
+        grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), ProfileActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable(Clase05Globals.bundle_people, array.get(position));
+
+                startActivity(intent);
+            }
+        });
 
         getCalls();
     }

@@ -24,6 +24,7 @@
 
     <!-- Profile Screeen -->
     <color name="profile_text">#2B2B2B</color>
+    <color name="profile_line">#F5F5F5</color>
 
 
 </resources>
