@@ -25,7 +25,7 @@
 
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="200dp">
+                    android:layout_height="300dp">
 
                     <com.facebook.drawee.view.SimpleDraweeView
                         android:id="@+id/photo"
@@ -36,6 +36,7 @@
                         fresco:placeholderImageScaleType="focusCrop" />
 
                     <TextView
+                        android:id="@+id/name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
@@ -90,6 +91,7 @@
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/registered"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.2"
@@ -100,6 +102,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/description"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.2"
@@ -134,6 +137,7 @@
                             android:paddingLeft="24dp">
 
                             <TextView
+                                android:id="@+id/username"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/app_name"
@@ -143,7 +147,7 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/app_name"
+                                android:text="@string/profile_username"
                                 android:textColor="@color/chat_time_registered"
                                 android:textSize="16sp" />
 
@@ -176,6 +180,7 @@
                             android:paddingLeft="24dp">
 
                             <TextView
+                                android:id="@+id/mobile"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="@string/app_name"
@@ -185,7 +190,7 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/app_name"
+                                android:text="@string/profile_mobile"
                                 android:textColor="@color/chat_time_registered"
                                 android:textSize="16sp" />
 
@@ -210,7 +215,14 @@
 
                     <HorizontalScrollView
                         android:layout_width="match_parent"
-                        android:layout_height="100dp" />
+                        android:layout_height="100dp">
+
+                        <LinearLayout
+                            android:id="@+id/media"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal" />
+                    </HorizontalScrollView>
 
 
                 </LinearLayout>

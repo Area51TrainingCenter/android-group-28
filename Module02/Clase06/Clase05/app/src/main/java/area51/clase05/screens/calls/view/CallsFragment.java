@@ -126,7 +126,10 @@ public class CallsFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), ProfileActivity.class);
                 Bundle bundle = new Bundle();
+
                 bundle.putSerializable(Clase05Globals.bundle_people, array.get(position));
+
+                intent.putExtras(bundle);
 
                 startActivity(intent);
             }
@@ -173,6 +176,9 @@ public class CallsFragment extends Fragment {
                                     item = data.getJSONObject(i);
                                     People people = new People();
 
+                                    String email = item.getString(Clase05Globals.req_email);
+                                    String cell = item.getString(Clase05Globals.req_cell);
+
                                     JSONObject name = item.getJSONObject(Clase05Globals.req_name);
 
                                     String name_large = name.getString(Clase05Globals.req_first)
@@ -182,8 +188,11 @@ public class CallsFragment extends Fragment {
                                     String picture_large = picture.getString(Clase05Globals.req_large);
 
                                     people.setName(name_large);
+                                    people.setFirst(name.getString(Clase05Globals.req_first));
                                     people.setPicture_large(picture_large);
                                     people.setRegistered(item.getString(Clase05Globals.req_registered));
+                                    people.setEmail(email);
+                                    people.setCell(cell);
                                     array.add(people);
                                 }
 

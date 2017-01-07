@@ -44,6 +44,7 @@ public class Clase05Globals {
     public static String req_large = "large";
     public static String req_registered = "registered";
     public static String req_email = "email";
+    public static String req_cell = "cell";
 
     //================================================
     //BUNDLE
