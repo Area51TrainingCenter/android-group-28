@@ -6,6 +6,7 @@ import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
 import area51.videoplayer.VideoPlayerApplication;
+import area51.videoplayer.libraries.log.TrackingLog;
 
 /**
  * Created by segundo on 14/01/17.
@@ -14,6 +15,8 @@ import area51.videoplayer.VideoPlayerApplication;
 public class VideoPlayerAnalytics {
 
     public static void TrackerScreen(Application app, String screen) {
+
+        TrackingLog.getMessage("TrackerScreen: " + screen);
 
         VideoPlayerApplication application
                 = (VideoPlayerApplication) app;
@@ -25,6 +28,8 @@ public class VideoPlayerAnalytics {
     }
 
     public static void TrackerEvents(Application app, String event) {
+        
+        TrackingLog.getMessage("TrackerEvents: " + event);
 
         VideoPlayerApplication application
                 = (VideoPlayerApplication) app;
