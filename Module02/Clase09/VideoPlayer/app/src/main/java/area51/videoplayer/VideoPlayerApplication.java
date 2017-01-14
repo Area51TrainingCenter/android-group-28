@@ -3,8 +3,10 @@ package area51.videoplayer;
 import android.app.Application;
 
 import com.crashlytics.android.Crashlytics;
+import com.facebook.FacebookSdk;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
+
 import io.fabric.sdk.android.Fabric;
 
 /**
@@ -20,9 +22,15 @@ public class VideoPlayerApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        //Fabric
         Fabric.with(this, new Crashlytics());
 
+        //Google Analytics
         sAnalytics = GoogleAnalytics.getInstance(this);
+
+        //Facebook SDK
+        FacebookSdk.sdkInitialize(getApplicationContext());
 
     }
 

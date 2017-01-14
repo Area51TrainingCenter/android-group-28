@@ -1,5 +1,6 @@
 package area51.videoplayer.screens.login.view;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,7 +36,11 @@ public class LoginActivity extends AppCompatActivity {
         VideoPlayerAnalytics
                 .TrackerScreen(getApplication(), "Login");
 
-
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        view.onActivityResult(requestCode, resultCode, data);
+    }
 }
