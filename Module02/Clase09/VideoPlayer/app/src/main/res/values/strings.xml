@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">VideoPlayer</string>
+
+    <!-- Login Screen -->
+    <string name="button_facebook">Ingresar con Facebook</string>
+
 </resources>
