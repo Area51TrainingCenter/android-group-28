@@ -37,7 +37,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            w
         </activity>
         <activity
             android:name=".screens.home.view.HomeActivity"
@@ -45,6 +44,9 @@
         <activity
             android:name=".screens.notifications.view.NotificationsActivity"
             android:screenOrientation="portrait" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="f1a57da980fcc2cebacfa01c4872f50e4ce429a5" />
     </application>
 
 </manifest>
