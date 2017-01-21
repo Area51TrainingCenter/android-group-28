@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         view = new WelcomeViewModel(this, this, binding);
         binding.setViewWelcome(view);
 
+        view.initView();
+
 
     }
 

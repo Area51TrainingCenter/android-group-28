@@ -9,7 +9,7 @@
 
     <!-- Welcome Screen -->
     <string name="welcome_video_app">Video en App</string>
-    <string name="welcome_video_hls">Video en HLD</string>
+    <string name="welcome_video_hls">Video en HLS</string>
     <string name="welcome_video_youtube">Live Video en Youtube</string>
 
 
