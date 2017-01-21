@@ -71,6 +71,7 @@ public class LoginViewModel {
 
         callback = CallbackManager.Factory.create();
 
+
         LoginManager.getInstance()
                 .logInWithReadPermissions(activity,
                         Arrays.asList("email", "public_profile")
@@ -142,6 +143,7 @@ public class LoginViewModel {
                 Bundle parameters = new Bundle();
                 parameters.putString("fields", "id,email,name,first_name,last_name,link,gender,picture");
                 request.setParameters(parameters);
+
                 request.executeAsync();
 
 

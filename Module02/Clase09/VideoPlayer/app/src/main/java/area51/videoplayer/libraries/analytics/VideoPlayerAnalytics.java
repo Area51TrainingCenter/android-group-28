@@ -7,6 +7,7 @@ import com.google.android.gms.analytics.Tracker;
 
 import area51.videoplayer.VideoPlayerApplication;
 import area51.videoplayer.libraries.log.TrackingLog;
+import area51.videoplayer.libraries.session.SessionManager;
 
 /**
  * Created by segundo on 14/01/17.
@@ -23,6 +24,12 @@ public class VideoPlayerAnalytics {
         Tracker tracker = application.getDefaultTracker();
 
         tracker.setScreenName(screen);
+        /*
+        SessionManager session = new SessionManager(app.getApplicationContext());
+        if( session.isLoggedIn() ){
+            tracker.set("&uid",session.getIdUsuario());
+        }
+        */
         tracker.send(new HitBuilders.ScreenViewBuilder().build());
 
     }
@@ -34,6 +41,7 @@ public class VideoPlayerAnalytics {
         VideoPlayerApplication application
                 = (VideoPlayerApplication) app;
         Tracker tracker = application.getDefaultTracker();
+        tracker.set("&uid","Segu");
 
         tracker.send(
                 new HitBuilders
