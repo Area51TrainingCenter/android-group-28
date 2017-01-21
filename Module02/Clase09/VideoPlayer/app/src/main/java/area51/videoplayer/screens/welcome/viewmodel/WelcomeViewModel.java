@@ -6,6 +6,6 @@ package area51.videoplayer.screens.welcome.viewmodel;
 
 public class WelcomeViewModel {
 
-    
+
 
 }

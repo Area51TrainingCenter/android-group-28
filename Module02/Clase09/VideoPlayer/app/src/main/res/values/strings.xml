@@ -7,4 +7,10 @@
     <!-- Facebook SDK -->
     <string name="facebook_app_id">382015378857461</string>
 
+    <!-- Welcome Screen -->
+    <string name="welcome_video_app">Video en App</string>
+    <string name="welcome_video_hls">Video en HLD</string>
+    <string name="welcome_video_youtube">Live Video en Youtube</string>
+
+
 </resources>
