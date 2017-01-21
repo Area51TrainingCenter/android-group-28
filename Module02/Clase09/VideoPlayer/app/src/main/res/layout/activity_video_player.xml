@@ -14,10 +14,12 @@
         android:layout_height="match_parent">
 
         <SurfaceView
+            android:id="@+id/surface"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
         <TextView
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
@@ -36,6 +38,7 @@
             android:orientation="vertical">
 
             <SeekBar
+                android:id="@+id/seekbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -55,16 +58,19 @@
                     android:layout_height="48dp">
 
                     <ImageView
+                        android:id="@+id/btnPlay"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:src="@drawable/play" />
 
                     <ImageView
+                        android:id="@+id/btnPause"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:src="@drawable/pause" />
 
                     <ImageView
+                        android:id="@+id/btnStop"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:src="@drawable/stop" />
@@ -72,6 +78,7 @@
                 </FrameLayout>
 
                 <TextView
+                    android:id="@+id/time"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
