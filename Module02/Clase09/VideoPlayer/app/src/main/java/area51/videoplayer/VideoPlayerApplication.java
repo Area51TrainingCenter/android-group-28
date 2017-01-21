@@ -6,6 +6,7 @@ import com.crashlytics.android.Crashlytics;
 import com.facebook.FacebookSdk;
 import com.facebook.LoggingBehavior;
 import com.facebook.appevents.AppEventsLogger;
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
 
@@ -24,6 +25,9 @@ public class VideoPlayerApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        //Frescolib
+        Fresco.initialize(this);
 
         //Fabric
         Fabric.with(this, new Crashlytics());
