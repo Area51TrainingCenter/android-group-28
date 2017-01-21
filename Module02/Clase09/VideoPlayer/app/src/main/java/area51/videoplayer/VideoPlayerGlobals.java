@@ -12,5 +12,8 @@ public class VideoPlayerGlobals {
     public static String bundle_video_uri = "video_uri";
     public static String bundle_video_type = "video_type";
 
+    public boolean auto_play = true;
+    public static int time = 0;
+
 
 }

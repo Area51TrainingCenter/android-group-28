@@ -99,7 +99,7 @@ public class WelcomeViewModel {
         Bundle bundle = new Bundle();
         bundle.putInt(VideoPlayerGlobals.bundle_video_type, 0);
         bundle.putString(VideoPlayerGlobals.bundle_video_uri,
-                "android.resource://area51.videoplayer" + R.raw.muestra);
+                "android.resource://area51.videoplayer/" + R.raw.muestra);
 
         intent.putExtras(bundle);
         activity.startActivity(intent);

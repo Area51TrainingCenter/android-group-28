@@ -61,6 +61,7 @@
                         android:id="@+id/btnPlay"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:onClick="@{viewPlayer::oncClickPlay}"
                         android:src="@drawable/play" />
 
                     <ImageView
