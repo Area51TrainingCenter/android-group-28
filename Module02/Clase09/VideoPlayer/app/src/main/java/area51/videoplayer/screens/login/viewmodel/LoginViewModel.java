@@ -39,7 +39,7 @@ public class LoginViewModel {
     //Session
     SessionManager session;
 
-    //FAcebook SDK
+    //Facebook SDK
     CallbackManager callback;
 
     public LoginViewModel(Activity activity,

@@ -4,4 +4,7 @@
     <!-- Login Screen -->
     <string name="button_facebook">Ingresar con Facebook</string>
 
+    <!-- Facebook SDK -->
+    <string name="facebook_app_id">382015378857461</string>
+
 </resources>

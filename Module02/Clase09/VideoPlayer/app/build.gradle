@@ -16,6 +16,14 @@ repositories {
 
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'VideoPlayer'
+            keyPassword '123456'
+            storeFile file('/Users/segundo/proyectos/area51/android-group-28/Module02/Clase09/VideoPlayer/videoplayer.jks')
+            storePassword '123456'
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
@@ -31,31 +39,28 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-    }
+        debug {
 
+        }
+    }
     dataBinding {
         enabled = true
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
-
-
     compile 'com.facebook.fresco:fresco:1.0.0'
     compile 'com.google.android.gms:play-services-analytics:9.2.0'
     compile('com.crashlytics.sdk.android:crashlytics:2.6.5@aar') {
         transitive = true;
     }
-
-
     compile 'com.facebook.android:facebook-android-sdk:4.+'
-
 }
 
 apply plugin: 'com.google.gms.google-services'
