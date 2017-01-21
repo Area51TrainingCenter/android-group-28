@@ -2,6 +2,8 @@ package area51.videoplayer.screens.welcome.viewmodel;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +12,11 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import area51.videoplayer.R;
+import area51.videoplayer.VideoPlayerGlobals;
 import area51.videoplayer.databinding.ActivityMainBinding;
 import area51.videoplayer.libraries.images.TrackingImage;
 import area51.videoplayer.libraries.session.SessionManager;
+import area51.videoplayer.screens.player.view.VideoPlayerActivity;
 import area51.videoplayer.screens.welcome.view.MainActivity;
 
 /**
@@ -91,10 +95,27 @@ public class WelcomeViewModel {
 
     public void onClickToApp(View view) {
 
+        Intent intent = new Intent(activity, VideoPlayerActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putInt(VideoPlayerGlobals.bundle_video_type, 0);
+        bundle.putString(VideoPlayerGlobals.bundle_video_uri,
+                "android.resource://area51.videoplayer" + R.raw.muestra);
+
+        intent.putExtras(bundle);
+        activity.startActivity(intent);
+
     }
 
     public void onClickToHls(View view) {
 
+        Intent intent = new Intent(activity, VideoPlayerActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putInt(VideoPlayerGlobals.bundle_video_type, 1);
+        bundle.putString(VideoPlayerGlobals.bundle_video_uri,
+                "http://osmfhls.kutu.ru/static/vod/sl_vod.m3u8");
+
+        intent.putExtras(bundle);
+        activity.startActivity(intent);
     }
 
     public void onClickToYoutube(View view) {
