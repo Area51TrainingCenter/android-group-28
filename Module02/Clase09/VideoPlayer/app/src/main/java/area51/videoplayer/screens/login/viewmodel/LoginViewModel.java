@@ -73,7 +73,7 @@ public class LoginViewModel {
 
         LoginManager.getInstance()
                 .logInWithReadPermissions(activity,
-                        Arrays.asList("email", "public_profile", "user_location")
+                        Arrays.asList("email", "public_profile")
                 );
 
         LoginManager.getInstance().registerCallback(callback, new FacebookCallback<LoginResult>() {
@@ -103,6 +103,7 @@ public class LoginViewModel {
                                         session = new SessionManager(context);
                                         session.setTokenFacebook("" + AccessToken.getCurrentAccessToken().getToken());
 
+                                        TrackingLog.getMessage("user: " + user);
                                         session.setIdUsuario(user.getString("id"));
 
                                         if (user.has("name")) {
