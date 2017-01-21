@@ -51,6 +51,7 @@
                 android:background="#CDCDCD" />
 
             <LinearLayout
+                android:id="@+id/panel"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -61,6 +62,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
+                    android:onClick="@{viewWelcome::onClickToApp}"
                     android:text="@string/welcome_video_app" />
 
                 <Button
@@ -68,12 +70,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
+                    android:onClick="@{viewWelcome::onClickToHls}"
                     android:text="@string/welcome_video_hls" />
 
                 <Button
                     android:id="@+id/videoYoutube"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:onClick="@{viewWelcome::onClickToYoutube}"
                     android:text="@string/welcome_video_youtube" />
 
             </LinearLayout>

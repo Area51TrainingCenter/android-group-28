@@ -2,7 +2,14 @@ package area51.videoplayer.screens.welcome.viewmodel;
 
 import android.app.Activity;
 import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 
+import area51.videoplayer.R;
 import area51.videoplayer.databinding.ActivityMainBinding;
 import area51.videoplayer.libraries.images.TrackingImage;
 import area51.videoplayer.libraries.session.SessionManager;
@@ -43,7 +50,56 @@ public class WelcomeViewModel {
 
         binding.name.setText(session.getNombreUsuario());
 
+        /*
+        for (int i = 0; i < 10; i++) {
+
+            LinearLayout layout = new LinearLayout(context);
+            LinearLayout.LayoutParams params =
+                    new LinearLayout.LayoutParams(
+                            ViewGroup.LayoutParams.MATCH_PARENT,
+                            ViewGroup.LayoutParams.WRAP_CONTENT);
+
+            params.setMargins(10, 10, 10, 10);
+
+            layout.setLayoutParams(params);
+
+
+            Button button = new Button(context);
+            button.setText("Dame clic");
+
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+
+
+
+            View view = LayoutInflater.from(context)
+                    .inflate(R.layout.row_edittext, null, false);
+
+            EditText text = (EditText)view.findViewById(R.id.text);
+
+            layout.addView(button);
+            binding.panel.addView(layout);
+
+        }
+
+        */
+    }
+
+    public void onClickToApp(View view) {
 
     }
+
+    public void onClickToHls(View view) {
+
+    }
+
+    public void onClickToYoutube(View view) {
+
+    }
+
 
 }
