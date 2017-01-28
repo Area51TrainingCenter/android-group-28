@@ -278,12 +278,12 @@ public class VideoPlayerActivity extends AppCompatActivity
         player.release();
     }
 
-    void detectedTime(int time) {
+    void detectedTime() {
 
         binding.time
-                .setText( formatTime(time)
-                + " / "
-                + formatTime(player.getDuration()));
+                .setText(formatTime(player.getCurrentPosition())
+                        + " / "
+                        + formatTime(player.getDuration()));
     }
 
     String formatTime(int time) {
