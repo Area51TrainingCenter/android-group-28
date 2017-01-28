@@ -11,7 +11,8 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:onClick="@{viewPlayer::onClickControls}">
 
         <SurfaceView
             android:id="@+id/surface"
@@ -31,6 +32,7 @@
             android:textSize="14sp" />
 
         <LinearLayout
+            android:id="@+id/controls"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
@@ -54,8 +56,8 @@
                 android:padding="10dp">
 
                 <FrameLayout
-                    android:layout_width="48dp"
-                    android:layout_height="48dp">
+                    android:layout_width="36dp"
+                    android:layout_height="36dp">
 
                     <ImageView
                         android:id="@+id/btnPlay"
@@ -68,12 +70,14 @@
                         android:id="@+id/btnPause"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:onClick="@{viewPlayer::oncClickPause}"
                         android:src="@drawable/pause" />
 
                     <ImageView
                         android:id="@+id/btnStop"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:onClick="@{viewPlayer::oncClickStop}"
                         android:src="@drawable/stop" />
 
                 </FrameLayout>

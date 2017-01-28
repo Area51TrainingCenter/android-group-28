@@ -4,21 +4,22 @@ import android.databinding.DataBindingUtil;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
+
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.SurfaceHolder;
 import android.view.View;
 import android.widget.SeekBar;
-import android.widget.Toast;
 
 import java.io.IOException;
 
 import area51.videoplayer.R;
 import area51.videoplayer.VideoPlayerGlobals;
 import area51.videoplayer.databinding.ActivityVideoPlayerBinding;
+import area51.videoplayer.libraries.analytics.VideoPlayerAnalytics;
 import area51.videoplayer.libraries.log.TrackingLog;
 import area51.videoplayer.screens.player.viewmodel.VideoViewModel;
-import area51.videoplayer.screens.welcome.viewmodel.WelcomeViewModel;
 
 public class VideoPlayerActivity extends AppCompatActivity
         implements MediaPlayer.OnPreparedListener,
@@ -29,6 +30,8 @@ public class VideoPlayerActivity extends AppCompatActivity
         MediaPlayer.OnInfoListener, SurfaceHolder.Callback,
         MediaPlayer.OnBufferingUpdateListener
         , VideoViewModel.onAddPlay
+        , VideoViewModel.onAddPause,
+        VideoViewModel.onAddStop
 
 {
 
@@ -41,17 +44,14 @@ public class VideoPlayerActivity extends AppCompatActivity
 
     int hilo = 1000;
     int reproduction_type = 0;
+
     String url = "";
+    String video_id = "";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-        TrackingLog.getMessage("extras: " + getIntent().getExtras().get(VideoPlayerGlobals.bundle_video_type));
-        TrackingLog.getMessage("extras: " + getIntent().getExtras().get(VideoPlayerGlobals.bundle_video_uri));
-
 
         if (getIntent().hasExtra(VideoPlayerGlobals.bundle_video_type)) {
             reproduction_type = getIntent()
@@ -63,6 +63,12 @@ public class VideoPlayerActivity extends AppCompatActivity
             url = getIntent()
                     .getExtras()
                     .getString(VideoPlayerGlobals.bundle_video_uri);
+        }
+
+        if (getIntent().hasExtra(VideoPlayerGlobals.bundle_video_id)) {
+            video_id = getIntent()
+                    .getExtras()
+                    .getString(VideoPlayerGlobals.bundle_video_id);
         }
 
         initBinding();
@@ -82,6 +88,18 @@ public class VideoPlayerActivity extends AppCompatActivity
         } else {
             TrackingLog.getMessage("No llego el video");
         }
+
+        //Registramos el analytics
+        VideoPlayerAnalytics
+                .TrackerScreen(getApplication(), "VideoPlayer");
+
+
+        VideoPlayerAnalytics
+                .TrackerEvents(getApplication(), "OpenVideo");
+
+        VideoPlayerAnalytics
+                .TrackerEvents(getApplication(), video_id);
+
     }
 
     public void onvideoStart() {
@@ -209,10 +227,47 @@ public class VideoPlayerActivity extends AppCompatActivity
 
     @Override
     public void onAddPlay() {
+
         if (!player.isPlaying()) {
             player.start();
+            //Enabled buttons
+            binding.btnPlay.setVisibility(View.GONE);
+            binding.btnPause.setVisibility(View.VISIBLE);
+
+            VideoPlayerAnalytics
+                    .TrackerEvents(getApplication(), "PlayVideo");
+
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    view.hideControls();
+                }
+            }, 4000);
+
         }
 
+    }
+
+    @Override
+    public void onAddPause() {
+
+        if (player.isPlaying()) {
+            player.pause();
+            binding.btnPlay.setVisibility(View.VISIBLE);
+            binding.btnPause.setVisibility(View.GONE);
+
+            VideoPlayerAnalytics
+                    .TrackerEvents(getApplication(), "PauseVideo");
+        }
+    }
+
+    @Override
+    public void onAddStop() {
+
+        VideoPlayerAnalytics
+                .TrackerEvents(getApplication(), "StopVideo");
     }
 
 
@@ -222,4 +277,33 @@ public class VideoPlayerActivity extends AppCompatActivity
 
         player.release();
     }
+
+    void detectedTime() {
+
+        int secondsTotal = player.getDuration() / 1000;
+
+        int minutes = secondsTotal / 60;
+        int seconds = secondsTotal % 60;
+        int hours = minutes / 60;
+
+
+        String time = String
+                .format("%02d : %02d : %02d", hours, minutes, seconds);
+
+        binding.time.setText(time);
+    }
+
+
+    Handler callbackTime = new Handler();
+    Runnable timeHandler = new Runnable() {
+        @Override
+        public void run() {
+
+            if (player.isPlaying()) {
+                detectedTime();
+            }
+        }
+    };
+
+
 }

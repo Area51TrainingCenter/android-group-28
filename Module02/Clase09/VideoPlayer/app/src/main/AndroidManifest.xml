@@ -21,7 +21,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".screens.player.view.VideoPlayerActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@style/VideoPlayer.FullScreen" />
         <activity
             android:name=".screens.launcher.LauncherActivity"
             android:noHistory="true"

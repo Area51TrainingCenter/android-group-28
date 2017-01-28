@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import area51.videoplayer.R;
 import area51.videoplayer.databinding.ActivityMainBinding;
+import area51.videoplayer.libraries.analytics.VideoPlayerAnalytics;
 import area51.videoplayer.screens.welcome.viewmodel.WelcomeViewModel;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
         binding.setViewWelcome(view);
 
         view.initView();
+
+        //Registramos el analytics
+        VideoPlayerAnalytics
+                .TrackerScreen(getApplication(), "Welcome");
 
 
     }

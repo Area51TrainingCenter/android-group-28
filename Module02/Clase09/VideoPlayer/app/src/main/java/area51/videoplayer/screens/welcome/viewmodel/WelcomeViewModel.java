@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import area51.videoplayer.R;
 import area51.videoplayer.VideoPlayerGlobals;
 import area51.videoplayer.databinding.ActivityMainBinding;
+import area51.videoplayer.libraries.analytics.VideoPlayerAnalytics;
 import area51.videoplayer.libraries.images.TrackingImage;
 import area51.videoplayer.libraries.session.SessionManager;
 import area51.videoplayer.screens.player.view.VideoPlayerActivity;
@@ -97,6 +98,8 @@ public class WelcomeViewModel {
 
         Intent intent = new Intent(activity, VideoPlayerActivity.class);
         Bundle bundle = new Bundle();
+
+        bundle.putString(VideoPlayerGlobals.bundle_video_id, "VIDEO001");
         bundle.putInt(VideoPlayerGlobals.bundle_video_type, 0);
         bundle.putString(VideoPlayerGlobals.bundle_video_uri,
                 "android.resource://area51.videoplayer/" + R.raw.muestra);
@@ -104,22 +107,34 @@ public class WelcomeViewModel {
         intent.putExtras(bundle);
         activity.startActivity(intent);
 
+
+        //Registramos el analytics
+        VideoPlayerAnalytics
+                .TrackerEvents(activity.getApplication(), "VideoToApp");
+
     }
 
     public void onClickToHls(View view) {
 
         Intent intent = new Intent(activity, VideoPlayerActivity.class);
         Bundle bundle = new Bundle();
+
+        bundle.putString(VideoPlayerGlobals.bundle_video_id, "VIDEO002");
         bundle.putInt(VideoPlayerGlobals.bundle_video_type, 1);
         bundle.putString(VideoPlayerGlobals.bundle_video_uri,
                 "http://osmfhls.kutu.ru/static/vod/sl_vod.m3u8");
 
         intent.putExtras(bundle);
         activity.startActivity(intent);
+
+        VideoPlayerAnalytics
+                .TrackerEvents(activity.getApplication(), "VideoToHls");
     }
 
     public void onClickToYoutube(View view) {
 
+        VideoPlayerAnalytics
+                .TrackerEvents(activity.getApplication(), "VideoToYoutube");
     }
 
 
