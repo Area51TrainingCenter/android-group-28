@@ -48,6 +48,8 @@ public class VideoPlayerActivity extends AppCompatActivity
     String url = "";
     String video_id = "";
 
+    int currentTime = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,8 +137,7 @@ public class VideoPlayerActivity extends AppCompatActivity
                 e.printStackTrace();
             }
         }
-
-
+        
     }
 
 
@@ -159,28 +160,66 @@ public class VideoPlayerActivity extends AppCompatActivity
     public void onPrepared(MediaPlayer mp) {
 
         TrackingLog.getMessage("onPrepared");
-        //mp.start();
+
+        player.seekTo(currentTime);
+        mp.start();
+        callbackTime.postDelayed(timeHandler, 1000);
+
+        //Enabled buttons
+        binding.btnPlay.setVisibility(View.GONE);
+        binding.btnPause.setVisibility(View.VISIBLE);
+
+        VideoPlayerAnalytics
+                .TrackerEvents(getApplication(), "PlayVideo");
+
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                view.hideControls();
+            }
+        }, 4000);
+
+
 
     }
 
     @Override
     public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
 
+        binding.seekbar.setMax(mp.getDuration());
+        binding.seekbar.setProgress(currentTime);
+        binding.seekbar.setOnSeekBarChangeListener(this);
+
+        detectedTime();
+
     }
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 
+        if (fromUser) {
+            currentTime = binding.seekbar.getProgress();
+            detectedTime();
+        }
     }
 
     @Override
     public void onStartTrackingTouch(SeekBar seekBar) {
-
+        callbackTime.removeCallbacks(timeHandler);
+        if(player.isPlaying()){
+            player.pause();
+        }
     }
 
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
-
+        player.seekTo(currentTime);
+        callbackTime.postDelayed(timeHandler, 1000);
+        if(!player.isPlaying()){
+            player.start();
+        }
     }
 
 
@@ -246,6 +285,10 @@ public class VideoPlayerActivity extends AppCompatActivity
                 }
             }, 4000);
 
+
+            callbackTime.postDelayed(timeHandler, 1000);
+
+
         }
 
     }
@@ -260,6 +303,8 @@ public class VideoPlayerActivity extends AppCompatActivity
 
             VideoPlayerAnalytics
                     .TrackerEvents(getApplication(), "PauseVideo");
+
+            callbackTime.removeCallbacks(timeHandler);
         }
     }
 
@@ -276,12 +321,13 @@ public class VideoPlayerActivity extends AppCompatActivity
         super.onDestroy();
 
         player.release();
+        callbackTime.removeCallbacks(timeHandler);
     }
 
     void detectedTime() {
 
         binding.time
-                .setText(formatTime(player.getCurrentPosition())
+                .setText(formatTime(currentTime)
                         + " / "
                         + formatTime(player.getDuration()));
     }
@@ -297,6 +343,8 @@ public class VideoPlayerActivity extends AppCompatActivity
         String timeString = String
                 .format("%02d : %02d : %02d", hours, minutes, seconds);
 
+        TrackingLog.getMessage("timeString: " + timeString);
+
         return timeString;
     }
 
@@ -306,7 +354,14 @@ public class VideoPlayerActivity extends AppCompatActivity
         @Override
         public void run() {
 
+            TrackingLog.getMessage("timeHandler");
+
+
+            callbackTime.postDelayed(timeHandler, 1000);
+
             if (player.isPlaying()) {
+                binding.seekbar.setProgress(player.getCurrentPosition());
+                currentTime = binding.seekbar.getProgress();
                 detectedTime();
             }
         }
