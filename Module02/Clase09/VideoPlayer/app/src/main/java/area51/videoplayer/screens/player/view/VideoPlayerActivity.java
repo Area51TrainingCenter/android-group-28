@@ -278,19 +278,26 @@ public class VideoPlayerActivity extends AppCompatActivity
         player.release();
     }
 
-    void detectedTime() {
+    void detectedTime(int time) {
 
-        int secondsTotal = player.getDuration() / 1000;
+        binding.time
+                .setText( formatTime(time)
+                + " / "
+                + formatTime(player.getDuration()));
+    }
+
+    String formatTime(int time) {
+
+        int secondsTotal = time / 1000;
 
         int minutes = secondsTotal / 60;
         int seconds = secondsTotal % 60;
         int hours = minutes / 60;
 
-
-        String time = String
+        String timeString = String
                 .format("%02d : %02d : %02d", hours, minutes, seconds);
 
-        binding.time.setText(time);
+        return timeString;
     }
 
 
