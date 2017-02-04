@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
     <application
         android:name=".VideoPlayerApplication"
         android:allowBackup="true"
@@ -47,6 +46,10 @@
             android:authorities="com.facebook.app.FacebookContentProvider1234"
             android:exported="true" />
 
+        <activity
+            android:name=".screens.player.view.YoutubePlayerActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>

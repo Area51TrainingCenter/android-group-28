@@ -18,6 +18,7 @@ import area51.videoplayer.libraries.analytics.VideoPlayerAnalytics;
 import area51.videoplayer.libraries.images.TrackingImage;
 import area51.videoplayer.libraries.session.SessionManager;
 import area51.videoplayer.screens.player.view.VideoPlayerActivity;
+import area51.videoplayer.screens.player.view.YoutubePlayerActivity;
 import area51.videoplayer.screens.welcome.view.MainActivity;
 
 /**
@@ -132,6 +133,11 @@ public class WelcomeViewModel {
     }
 
     public void onClickToYoutube(View view) {
+
+
+        Intent intent = new Intent(activity, YoutubePlayerActivity.class);
+        activity.startActivity(intent);
+
 
         VideoPlayerAnalytics
                 .TrackerEvents(activity.getApplication(), "VideoToYoutube");

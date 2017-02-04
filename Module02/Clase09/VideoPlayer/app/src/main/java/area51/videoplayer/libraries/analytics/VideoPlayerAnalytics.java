@@ -41,7 +41,7 @@ public class VideoPlayerAnalytics {
         VideoPlayerApplication application
                 = (VideoPlayerApplication) app;
         Tracker tracker = application.getDefaultTracker();
-        tracker.set("&uid","Segu");
+        //tracker.set("&uid","Segu");
 
         tracker.send(
                 new HitBuilders
